@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema xmlns="http://schemas.microsoft.com/ado/2008/09/edm" xmlns:cg="http://schemas.microsoft.com/ado/2006/04/codegeneration" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" Namespace="BridgeMail" Alias="Self" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="BridgeMailContainer" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="GoupMail_Person" EntityType="BridgeMail.GoupMail_Person" />
+    <EntitySet Name="GroupMail_Groups" EntityType="BridgeMail.GroupMail_Groups" />
+    <EntitySet Name="GroupMail_History" EntityType="BridgeMail.GroupMail_History" />
+    <AssociationSet Name="GroupMail_GroupsGoupMail_Person" Association="BridgeMail.GroupMail_GroupsGoupMail_Person">
+      <End Role="GroupMail_Groups" EntitySet="GroupMail_Groups" />
+      <End Role="GoupMail_Person" EntitySet="GoupMail_Person" />
+    </AssociationSet>
+    <AssociationSet Name="GroupMail_GroupsGroupMail_History" Association="BridgeMail.GroupMail_GroupsGroupMail_History">
+      <End Role="GroupMail_Groups" EntitySet="GroupMail_Groups" />
+      <End Role="GroupMail_History" EntitySet="GroupMail_History" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="GoupMail_Person">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ModuleID" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByUser" Nullable="false" />
+    <Property Type="String" Name="FirstName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="LastName" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="EMail" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Comment" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Phone" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="City" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="State" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="CellPhone" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="ACBLNumber" MaxLength="12" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="Lists" Relationship="BridgeMail.GroupMail_GroupsGoupMail_Person" FromRole="GoupMail_Person" ToRole="GroupMail_Groups" />
+  </EntityType>
+  <EntityType Name="GroupMail_Groups">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Type="Int32" Name="ItemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ModuleID" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByUser" Nullable="false" />
+    <Property Type="String" Name="GroupName" Nullable="false" MaxLength="150" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="People" Relationship="BridgeMail.GroupMail_GroupsGoupMail_Person" FromRole="GroupMail_Groups" ToRole="GoupMail_Person" />
+    <NavigationProperty Name="Emails" Relationship="BridgeMail.GroupMail_GroupsGroupMail_History" FromRole="GroupMail_Groups" ToRole="GroupMail_History" />
+  </EntityType>
+  <EntityType Name="GroupMail_History">
+    <Key>
+      <PropertyRef Name="itemID" />
+    </Key>
+    <Property Type="Int32" Name="itemID" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Type="Int32" Name="ModuleID" Nullable="false" />
+    <Property Type="DateTime" Name="CreatedDate" Nullable="false" Precision="3" />
+    <Property Type="Int32" Name="CreatedByUser" Nullable="false" />
+    <Property Type="Int32" Name="GroupID" Nullable="false" />
+    <Property Type="String" Name="Title" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="Message" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Type="String" Name="SentTo" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <NavigationProperty Name="List" Relationship="BridgeMail.GroupMail_GroupsGroupMail_History" FromRole="GroupMail_History" ToRole="GroupMail_Groups" />
+    <Property Type="Int32" Name="GroupMail_GroupsItemID" Nullable="false" />
+  </EntityType>
+  <Association Name="GroupMail_GroupsGoupMail_Person">
+    <End Type="BridgeMail.GroupMail_Groups" Role="GroupMail_Groups" Multiplicity="*" />
+    <End Type="BridgeMail.GoupMail_Person" Role="GoupMail_Person" Multiplicity="*" />
+  </Association>
+  <Association Name="GroupMail_GroupsGroupMail_History">
+    <End Type="BridgeMail.GroupMail_Groups" Role="GroupMail_Groups" Multiplicity="1" />
+    <End Type="BridgeMail.GroupMail_History" Role="GroupMail_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupMail_Groups">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="GroupMail_History">
+        <PropertyRef Name="GroupMail_GroupsItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

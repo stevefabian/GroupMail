@@ -1,0 +1,59 @@
+<dotnetnuke version="3.0" type="Module">
+  <folders>
+    <folder>
+      <name>Gooddogs: BridgeMail</name>
+      <friendlyname>Gooddogs: BridgeMail</friendlyname>
+      <foldername>BridgeMail</foldername>
+      <modulename>Gooddogs: BridgeMail</modulename>
+      <description>Gooddogs BridgeMail module</description>
+      <version>01.00.00</version>
+      <resourcefile>Resources.zip</resourcefile>
+      <businesscontrollerclass>FeatureController</businesscontrollerclass>
+      <modules>
+        <module>
+          <friendlyname>BridgeMail</friendlyname>
+          <cachetime>0</cachetime>
+          <controls>
+            <control>
+              <src>DesktopModules/BridgeMail/Views/View.ascx</src>
+              <type>View</type>
+              <helpurl></helpurl>
+            </control>
+            <control>
+              <key>About</key>
+              <title>About this Module</title>
+              <src>DesktopModules/BridgeMail/Views/About.ascx</src>
+              <type>Edit</type>
+              <helpurl></helpurl>
+            </control>
+            <control>
+              <key>Demo</key>
+              <title>Demonstration</title>
+              <src>DesktopModules/BridgeMail/Views/Demo.ascx</src>
+              <type>Edit</type>
+              <helpurl></helpurl>
+            </control>
+            <control>
+              <key>Settings</key>
+              <title>BridgeMail Settings</title>
+              <src>DesktopModules/BridgeMail/Views/Settings.ascx</src>
+              <type>Edit</type>
+              <helpurl></helpurl>
+            </control>
+          </controls>
+        </module>
+      </modules>
+      <files>
+        <file>
+	     <name>Gooddogs.Modules.Dnn.BridgeMail.dll</name>
+      	</file>
+        <file>
+          <name>Data/scripts/01.00.00.SqlDataProvider</name>
+        </file>
+        <file>
+          <name>Data/scripts/Uninstall.SqlDataProvider</name>
+        </file>
+      </files>
+    </folder>
+  </folders>
+</dotnetnuke>

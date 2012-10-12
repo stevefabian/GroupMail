@@ -1,0 +1,262 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>8.0.50727</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{4FC9B693-281C-452E-A25E-2F1010D71761}</ProjectGuid>
+    <ProjectTypeGuids>{349c5851-65df-11da-9384-00065b846f21};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Gooddogs.Modules.Dnn.BridgeMail</RootNamespace>
+    <AssemblyName>Gooddogs.Modules.Dnn.BridgeMail</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <FileUpgradeFlags>
+    </FileUpgradeFlags>
+    <OldToolsVersion>4.0</OldToolsVersion>
+    <UpgradeBackupLocation />
+    <TargetFrameworkProfile />
+    <SccProjectName>SAK</SccProjectName>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccProvider>SAK</SccProvider>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>BridgeMail.xml</DocumentationFile>
+    <WarningLevel>1</WarningLevel>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <OutputPath>..\..\bin\</OutputPath>
+    <DocumentationFile>BridgeMail.xml</DocumentationFile>
+    <CodeAnalysisRuleSet>AllRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.VisualBasic" />
+    <Reference Include="DotNetNuke, Version=4.5.1.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\DotNetNuke.dll</HintPath>
+    </Reference>
+    <Reference Include="ClientDependency.Core, Version=1.4.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\ClientDependency.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="DotNetNuke.Web.Client, Version=6.1.0.272, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\DotNetNuke.Web.Client.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.ApplicationBlocks.Data, Version=2.0.0.0, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\..\bin\Microsoft.ApplicationBlocks.Data.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data.Entity" />
+    <Reference Include="System.Data.Linq" />
+    <Reference Include="System.Data.Services" />
+    <Reference Include="System.Data.Services.Client" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.ServiceModel.Web" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.DynamicData" />
+    <Reference Include="System.Web.Entity" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml" />
+    <Reference Include="System.Configuration" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Mobile" />
+    <Reference Include="System.Xml.Linq" />
+  </ItemGroup>
+  <ItemGroup>
+    <Import Include="DotNetNuke" />
+    <Import Include="DotNetNuke.Common" />
+    <Import Include="DotNetNuke.Common.Utilities" />
+    <Import Include="DotNetNuke.Data" />
+    <Import Include="DotNetNuke.Entities" />
+    <Import Include="DotNetNuke.Entities.Tabs" />
+    <Import Include="DotNetNuke.Framework" />
+    <Import Include="DotNetNuke.Modules" />
+    <Import Include="DotNetNuke.Security" />
+    <Import Include="DotNetNuke.Services" />
+    <Import Include="DotNetNuke.Services.Exceptions" />
+    <Import Include="DotNetNuke.Services.Localization" />
+    <Import Include="DotNetNuke.UI" />
+    <Import Include="Microsoft.VisualBasic" />
+    <Import Include="System" />
+    <Import Include="System.Collections" />
+    <Import Include="System.Collections.Generic" />
+    <Import Include="System.Data" />
+    <Import Include="System.Diagnostics" />
+    <Import Include="System.Collections.Specialized" />
+    <Import Include="System.Configuration" />
+    <Import Include="System.Text" />
+    <Import Include="System.Text.RegularExpressions" />
+    <Import Include="System.Web" />
+    <Import Include="System.Web.Caching" />
+    <Import Include="System.Web.SessionState" />
+    <Import Include="System.Web.Security" />
+    <Import Include="System.Web.Profile" />
+    <Import Include="System.Web.UI" />
+    <Import Include="System.Web.UI.WebControls" />
+    <Import Include="System.Web.UI.WebControls.WebParts" />
+    <Import Include="System.Web.UI.HtmlControls" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\bootstrap-responsive.css" />
+    <Content Include="Content\bootstrap-responsive.min.css" />
+    <Content Include="Content\bootstrap.css" />
+    <Content Include="Content\bootstrap.min.css" />
+    <Content Include="Content\images\error.png" />
+    <Content Include="Content\images\glyphicons-halflings-white.png" />
+    <Content Include="Content\images\glyphicons-halflings.png" />
+    <Content Include="Content\images\GooddogsLogo64.png" />
+    <Content Include="Content\images\info.png" />
+    <Content Include="Content\images\success.png" />
+    <Content Include="Content\images\warning.png" />
+    <Content Include="Content\images\ajax-loader.gif" />
+    <Content Include="Content\messages.css" />
+    <Content Include="Data\BridgeMail.edmx.sql" />
+    <Content Include="Documentation\Documentation.css" />
+    <Content Include="Documentation\Documentation.html" />
+    <Compile Include="Common\FeatureController.cs" />
+    <Compile Include="Data\BridgeMail.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>BridgeMail.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Service\BridgeMailDataService.svc.cs">
+      <DependentUpon>BridgeMailDataService.svc</DependentUpon>
+    </Compile>
+    <Compile Include="Views\About.ascx.cs">
+      <DependentUpon>About.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\About.ascx.designer.cs">
+      <DependentUpon>About.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Emails.ascx.cs">
+      <DependentUpon>Emails.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\Emails.ascx.designer.cs">
+      <DependentUpon>Emails.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\People.ascx.cs">
+      <DependentUpon>People.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\People.ascx.designer.cs">
+      <DependentUpon>People.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings.ascx.designer.cs">
+      <DependentUpon>Settings.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Settings.ascx.cs">
+      <DependentUpon>Settings.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\BridgeMailSettingsBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Views\View.ascx.designer.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+    </Compile>
+    <Compile Include="Views\View.ascx.cs">
+      <DependentUpon>View.ascx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Common\BridgeMailModuleBase.cs">
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Views\App_LocalResources\Settings.ascx.resx">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Views\App_LocalResources\View.ascx.resx" />
+    <EntityDeploy Include="Data\BridgeMail.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>BridgeMail.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\scripts\01.00.00.SqlDataProvider" />
+    <None Include="BridgeMail.dnn" />
+    <None Include="Data\scripts\Uninstall.SqlDataProvider" />
+    <Content Include="module.css" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\datajs-1.0.2.js" />
+    <Content Include="Scripts\datajs-1.0.2.min.js" />
+    <Content Include="Scripts\dump.js" />
+    <Content Include="Scripts\jquery.dateFormat.js" />
+    <Content Include="Scripts\knockout-2.0.0.debug.js" />
+    <Content Include="Scripts\knockout-2.0.0.js" />
+    <Content Include="Scripts\knockout.mapping-latest.debug.js" />
+    <Content Include="Scripts\knockout.mapping-latest.js" />
+    <Content Include="Scripts\ModuleScriptBase.js" />
+    <Content Include="Service\BridgeMailDataService.svc" />
+    <Content Include="ViewModels\About.js" />
+    <Content Include="ViewModels\Emails.js" />
+    <Content Include="ViewModels\People.js" />
+    <Content Include="ViewModels\View.js" />
+    <Content Include="Views\About.ascx" />
+    <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Mobile\BridgeMail.htm" />
+    <Content Include="Mobile\mobile.css" />
+    <Content Include="Views\Emails.ascx" />
+    <Content Include="Views\People.ascx" />
+    <Content Include="Views\Settings.ascx" />
+    <Content Include="Views\View.ascx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\App_LocalResources\About.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\App_LocalResources\SharedResources.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Models\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\App_LocalResources\People.ascx.resx" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\App_LocalResources\Emails.ascx.resx" />
+  </ItemGroup>
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <VSToolsPath Condition="'$(VSToolsPath)' == ''">$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)</VSToolsPath>
+  </PropertyGroup>
+  <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
+  <Import Project="$(VSToolsPath)\WebApplications\Microsoft.WebApplication.targets" Condition="'$(VSToolsPath)' != ''" />
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" Condition="false" />
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <SaveServerSettingsInUserFile>True</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
+</Project>

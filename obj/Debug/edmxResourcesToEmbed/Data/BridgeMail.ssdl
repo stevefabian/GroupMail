@@ -1,0 +1,107 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="BridgeMail.Store" Alias="Self" Provider="System.Data.SqlClient" ProviderManifestToken="2008" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns="http://schemas.microsoft.com/ado/2009/02/edm/ssdl">
+  <EntityContainer Name="BridgeMailStoreContainer">
+    <EntitySet Name="GoupMail_Person" EntityType="BridgeMail.Store.GoupMail_Person" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupMail_Groups" EntityType="BridgeMail.Store.GroupMail_Groups" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupMail_History" EntityType="BridgeMail.Store.GroupMail_History" store:Type="Tables" Schema="dbo" />
+    <EntitySet Name="GroupMail_GroupsGoupMail_Person" EntityType="BridgeMail.Store.GroupMail_GroupsGoupMail_Person" store:Type="Tables" Schema="dbo" />
+    <AssociationSet Name="FK_GroupMail_GroupsGoupMail_Person_GroupMail_Groups" Association="BridgeMail.Store.FK_GroupMail_GroupsGoupMail_Person_GroupMail_Groups">
+      <End Role="GroupMail_Groups" EntitySet="GroupMail_Groups" />
+      <End Role="GroupMail_GroupsGoupMail_Person" EntitySet="GroupMail_GroupsGoupMail_Person" />
+    </AssociationSet>
+    <AssociationSet Name="FK_GroupMail_GroupsGoupMail_Person_GoupMail_Person" Association="BridgeMail.Store.FK_GroupMail_GroupsGoupMail_Person_GoupMail_Person">
+      <End Role="GoupMail_Person" EntitySet="GoupMail_Person" />
+      <End Role="GroupMail_GroupsGoupMail_Person" EntitySet="GroupMail_GroupsGoupMail_Person" />
+    </AssociationSet>
+    <AssociationSet Name="GroupMail_GroupsGroupMail_History" Association="BridgeMail.Store.GroupMail_GroupsGroupMail_History">
+      <End Role="GroupMail_Groups" EntitySet="GroupMail_Groups" />
+      <End Role="GroupMail_History" EntitySet="GroupMail_History" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="GoupMail_Person">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleID" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedByUser" Type="int" Nullable="false" />
+    <Property Name="FirstName" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="LastName" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="EMail" Type="nvarchar" Nullable="true" MaxLength="150" />
+    <Property Name="Comment" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Phone" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="City" Type="nvarchar" Nullable="true" MaxLength="50" />
+    <Property Name="State" Type="nvarchar" Nullable="true" MaxLength="4" />
+    <Property Name="CellPhone" Type="nvarchar" Nullable="true" MaxLength="20" />
+    <Property Name="ACBLNumber" Type="nvarchar" Nullable="true" MaxLength="12" />
+  </EntityType>
+  <EntityType Name="GroupMail_Groups">
+    <Key>
+      <PropertyRef Name="ItemID" />
+    </Key>
+    <Property Name="ItemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleID" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedByUser" Type="int" Nullable="false" />
+    <Property Name="GroupName" Type="nvarchar" Nullable="false" MaxLength="150" />
+  </EntityType>
+  <EntityType Name="GroupMail_History">
+    <Key>
+      <PropertyRef Name="itemID" />
+    </Key>
+    <Property Name="itemID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="ModuleID" Type="int" Nullable="false" />
+    <Property Name="CreatedDate" Type="datetime" Nullable="false" />
+    <Property Name="CreatedByUser" Type="int" Nullable="false" />
+    <Property Name="GroupID" Type="int" Nullable="false" />
+    <Property Name="Title" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="Message" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="SentTo" Type="nvarchar(max)" Nullable="true" />
+    <Property Name="GroupMail_GroupsItemID" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="GroupMail_GroupsGoupMail_Person">
+    <Key>
+      <PropertyRef Name="Lists_ItemID" />
+      <PropertyRef Name="People_ItemID" />
+    </Key>
+    <Property Name="Lists_ItemID" Type="int" Nullable="false" />
+    <Property Name="People_ItemID" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="GroupMail_GroupsGroupMail_History">
+    <End Role="GroupMail_Groups" Type="BridgeMail.Store.GroupMail_Groups" Multiplicity="1" />
+    <End Role="GroupMail_History" Type="BridgeMail.Store.GroupMail_History" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupMail_Groups">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="GroupMail_History">
+        <PropertyRef Name="GroupMail_GroupsItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupMail_GroupsGoupMail_Person_GroupMail_Groups">
+    <End Role="GroupMail_Groups" Type="BridgeMail.Store.GroupMail_Groups" Multiplicity="1" />
+    <End Role="GroupMail_GroupsGoupMail_Person" Type="BridgeMail.Store.GroupMail_GroupsGoupMail_Person" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="GroupMail_Groups">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="GroupMail_GroupsGoupMail_Person">
+        <PropertyRef Name="Lists_ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_GroupMail_GroupsGoupMail_Person_GoupMail_Person">
+    <End Role="GroupMail_GroupsGoupMail_Person" Type="BridgeMail.Store.GroupMail_GroupsGoupMail_Person" Multiplicity="*" />
+    <End Role="GoupMail_Person" Type="BridgeMail.Store.GoupMail_Person" Multiplicity="1" />
+    <ReferentialConstraint>
+      <Principal Role="GoupMail_Person">
+        <PropertyRef Name="ItemID" />
+      </Principal>
+      <Dependent Role="GroupMail_GroupsGoupMail_Person">
+        <PropertyRef Name="People_ItemID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

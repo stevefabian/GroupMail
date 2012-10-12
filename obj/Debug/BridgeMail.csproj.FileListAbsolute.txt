@@ -1,0 +1,6 @@
+E:\dev\Web\DotNetNuke\620b\bin\Gooddogs.Modules.Dnn.BridgeMail.dll
+E:\dev\Web\DotNetNuke\620b\bin\Gooddogs.Modules.Dnn.BridgeMail.pdb
+E:\dev\Web\DotNetNuke\620b\bin\BridgeMail.xml
+E:\dev\Web\DotNetNuke\620b\DesktopModules\BridgeMail\obj\Debug\BridgeMail.csprojResolveAssemblyReference.cache
+E:\dev\Web\DotNetNuke\620b\DesktopModules\BridgeMail\obj\Debug\Gooddogs.Modules.Dnn.BridgeMail.dll
+E:\dev\Web\DotNetNuke\620b\DesktopModules\BridgeMail\obj\Debug\Gooddogs.Modules.Dnn.BridgeMail.pdb

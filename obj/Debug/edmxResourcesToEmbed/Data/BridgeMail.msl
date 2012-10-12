@@ -1,0 +1,58 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2008/09/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="BridgeMailStoreContainer" CdmEntityContainer="BridgeMailContainer">
+    <EntitySetMapping Name="GoupMail_Person">
+      <EntityTypeMapping TypeName="IsTypeOf(BridgeMail.GoupMail_Person)">
+        <MappingFragment StoreEntitySet="GoupMail_Person">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CreatedByUser" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="EMail" ColumnName="EMail" />
+          <ScalarProperty Name="Comment" ColumnName="Comment" />
+          <ScalarProperty Name="Phone" ColumnName="Phone" />
+          <ScalarProperty Name="City" ColumnName="City" />
+          <ScalarProperty Name="State" ColumnName="State" />
+          <ScalarProperty Name="CellPhone" ColumnName="CellPhone" />
+          <ScalarProperty Name="ACBLNumber" ColumnName="ACBLNumber" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupMail_Groups">
+      <EntityTypeMapping TypeName="IsTypeOf(BridgeMail.GroupMail_Groups)">
+        <MappingFragment StoreEntitySet="GroupMail_Groups">
+          <ScalarProperty Name="ItemID" ColumnName="ItemID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CreatedByUser" />
+          <ScalarProperty Name="GroupName" ColumnName="GroupName" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="GroupMail_History">
+      <EntityTypeMapping TypeName="IsTypeOf(BridgeMail.GroupMail_History)">
+        <MappingFragment StoreEntitySet="GroupMail_History">
+          <ScalarProperty Name="itemID" ColumnName="itemID" />
+          <ScalarProperty Name="ModuleID" ColumnName="ModuleID" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="CreatedByUser" ColumnName="CreatedByUser" />
+          <ScalarProperty Name="GroupID" ColumnName="GroupID" />
+          <ScalarProperty Name="Title" ColumnName="Title" />
+          <ScalarProperty Name="Message" ColumnName="Message" />
+          <ScalarProperty Name="SentTo" ColumnName="SentTo" />
+          <ScalarProperty Name="GroupMail_GroupsItemID" ColumnName="GroupMail_GroupsItemID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <AssociationSetMapping Name="GroupMail_GroupsGoupMail_Person" TypeName="BridgeMail.GroupMail_GroupsGoupMail_Person" StoreEntitySet="GroupMail_GroupsGoupMail_Person">
+      <EndProperty Name="GroupMail_Groups">
+        <ScalarProperty Name="ItemID" ColumnName="Lists_ItemID" />
+      </EndProperty>
+      <EndProperty Name="GoupMail_Person">
+        <ScalarProperty Name="ItemID" ColumnName="People_ItemID" />
+      </EndProperty>
+    </AssociationSetMapping>
+  </EntityContainerMapping>
+</Mapping>

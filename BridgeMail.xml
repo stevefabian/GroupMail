@@ -1,0 +1,411 @@
+<?xml version="1.0"?>
+<doc>
+    <assembly>
+        <name>Gooddogs.Modules.Dnn.BridgeMail</name>
+    </assembly>
+    <members>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.FeatureController">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Controller class for BridgeMail
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.FeatureController.ExportModule(System.Int32)">
+            -----------------------------------------------------------------------------
+            <summary>
+            ExportModule implements the IPortable ExportModule Interface
+            </summary>
+            <param name="ModuleID">The Id of the module to be exported</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.FeatureController.ImportModule(System.Int32,System.String,System.String,System.Int32)">
+            -----------------------------------------------------------------------------
+            <summary>
+            ImportModule implements the IPortable ImportModule Interface
+            </summary>
+            <param name="ModuleID">The Id of the module to be imported</param>
+            <param name="Content">The content to be imported</param>
+            <param name="Version">The version of the module to be imported</param>
+            <param name="UserId">The Id of the user performing the import</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.FeatureController.GetSearchItems(DotNetNuke.Entities.Modules.ModuleInfo)">
+            -----------------------------------------------------------------------------
+            <summary>
+            GetSearchItems implements the ISearchable Interface
+            </summary>
+            <param name="ModInfo">The ModuleInfo for the module to be Indexed</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.FeatureController.UpgradeModule(System.String)">
+            -----------------------------------------------------------------------------
+            <summary>
+            UpgradeModule implements the IUpgradeable Interface
+            </summary>
+            <param name="Version">The current version of the module</param>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.#ctor">
+            <summary>
+            Initializes a new BridgeMailContainer object using the connection string found in the 'BridgeMailContainer' section of the application configuration file.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.#ctor(System.String)">
+            <summary>
+            Initialize a new BridgeMailContainer object.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.#ctor(System.Data.EntityClient.EntityConnection)">
+            <summary>
+            Initialize a new BridgeMailContainer object.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.AddToGoupMail_Person(Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person)">
+            <summary>
+            Deprecated Method for adding a new object to the GoupMail_Person EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.AddToGroupMail_Groups(Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups)">
+            <summary>
+            Deprecated Method for adding a new object to the GroupMail_Groups EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.AddToGroupMail_History(Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History)">
+            <summary>
+            Deprecated Method for adding a new object to the GroupMail_History EntitySet. Consider using the .Add method of the associated ObjectSet&lt;T&gt; property instead.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.GoupMail_Person">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.GroupMail_Groups">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.BridgeMailContainer.GroupMail_History">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.CreateGoupMail_Person(System.Int32,System.Int32,System.DateTime,System.Int32)">
+            <summary>
+            Create a new GoupMail_Person object.
+            </summary>
+            <param name="itemID">Initial value of the ItemID property.</param>
+            <param name="moduleID">Initial value of the ModuleID property.</param>
+            <param name="createdDate">Initial value of the CreatedDate property.</param>
+            <param name="createdByUser">Initial value of the CreatedByUser property.</param>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.ItemID">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.ModuleID">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.CreatedDate">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.CreatedByUser">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.FirstName">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.LastName">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.EMail">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.Comment">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.Phone">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.City">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.State">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.CellPhone">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.ACBLNumber">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GoupMail_Person.Lists">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups.CreateGroupMail_Groups(System.Int32,System.Int32,System.DateTime,System.Int32,System.String)">
+            <summary>
+            Create a new GroupMail_Groups object.
+            </summary>
+            <param name="itemID">Initial value of the ItemID property.</param>
+            <param name="moduleID">Initial value of the ModuleID property.</param>
+            <param name="createdDate">Initial value of the CreatedDate property.</param>
+            <param name="createdByUser">Initial value of the CreatedByUser property.</param>
+            <param name="groupName">Initial value of the GroupName property.</param>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups.ItemID">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups.ModuleID">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups.CreatedDate">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups.CreatedByUser">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups.GroupName">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups.People">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_Groups.Emails">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.CreateGroupMail_History(System.Int32,System.Int32,System.DateTime,System.Int32,System.Int32,System.Int32)">
+            <summary>
+            Create a new GroupMail_History object.
+            </summary>
+            <param name="itemID">Initial value of the itemID property.</param>
+            <param name="moduleID">Initial value of the ModuleID property.</param>
+            <param name="createdDate">Initial value of the CreatedDate property.</param>
+            <param name="createdByUser">Initial value of the CreatedByUser property.</param>
+            <param name="groupID">Initial value of the GroupID property.</param>
+            <param name="groupMail_GroupsItemID">Initial value of the GroupMail_GroupsItemID property.</param>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.itemID">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.ModuleID">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.CreatedDate">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.CreatedByUser">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.GroupID">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.Title">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.Message">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.SentTo">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.GroupMail_GroupsItemID">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.List">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="P:Gooddogs.Modules.Dnn.BridgeMail.Data.GroupMail_History.ListReference">
+            <summary>
+            No Metadata Documentation available.
+            </summary>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Views.About.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.BridgeMail.Views.About.viewmodel">
+            <summary>
+            viewmodel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.Emails">
+            -----------------------------------------------------------------------------
+            <summary>
+            The ViewHelloWorld class displays the content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Emails.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.BridgeMail.Emails.viewmodel">
+            <summary>
+            viewmodel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.People">
+            -----------------------------------------------------------------------------
+            <summary>
+            The ViewHelloWorld class displays the content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.People.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.BridgeMail.People.viewmodel">
+            <summary>
+            viewmodel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.Settings">
+            -----------------------------------------------------------------------------
+            <summary>
+            The Settings class manages Module Settings
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Settings.LoadSettings">
+            -----------------------------------------------------------------------------
+            <summary>
+            LoadSettings loads the settings from the Database and displays them
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.Settings.UpdateSettings">
+            -----------------------------------------------------------------------------
+            <summary>
+            UpdateSettings saves the modified settings to the Database
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="T:Gooddogs.Modules.Dnn.BridgeMail.View">
+            -----------------------------------------------------------------------------
+            <summary>
+            The ViewHelloWorld class displays the content
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+        <member name="F:Gooddogs.Modules.Dnn.BridgeMail.View.viewmodel">
+            <summary>
+            viewmodel control.
+            </summary>
+            <remarks>
+            Auto-generated field.
+            To modify move field declaration from designer file to code-behind file.
+            </remarks>
+        </member>
+        <member name="M:Gooddogs.Modules.Dnn.BridgeMail.View.Page_Load(System.Object,System.EventArgs)">
+            -----------------------------------------------------------------------------
+            <summary>
+            Page_Load runs when the control is loaded
+            </summary>
+            -----------------------------------------------------------------------------
+        </member>
+    </members>
+</doc>
